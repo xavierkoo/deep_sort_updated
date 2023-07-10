@@ -58,7 +58,7 @@ def extract_image_patch(image, bbox, patch_shape):
         bbox[2] = new_width
 
     # convert to top left, bottom right
-    bbox[2:] += bbox[:2]
+    bbox[2:] += bbox[:2] - 1
     bbox = bbox.astype(np.int)
 
     # clip at image boundaries
